@@ -16,6 +16,7 @@ import "@openzeppelin/contracts/utils/SafeCast.sol";
  * @title CashMarket
  * @notice Marketplace for trading cash to fCash tokens. Implements a specialized AMM for trading such assets.
  */
+// contract inherits from Governed 
 contract CashMarket is Governed {
     using SafeUInt128 for uint128;
     using SafeMath for uint256;
@@ -30,6 +31,7 @@ contract CashMarket is Governed {
 
     /**
      * @dev skip
+     constructor is implemented with initialize to permit upgradeability of the CashMarket contract 
      */
     function initializeDependencies() external {
         // Setting dependencies can only be done once here. With proxy contracts the addresses shouldn't
